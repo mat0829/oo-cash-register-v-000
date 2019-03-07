@@ -3,9 +3,9 @@ class CashRegister
 
 
   def initialize(*discount)
-   @total = 0
-   @discount = discount[0]
-   @items = []
+    @total = 0
+    @discount = discount[0]
+    @items = []
   end
 
   def add_item(item, price, quantity=1)
@@ -23,16 +23,16 @@ class CashRegister
     discount_percentage = 1 - @discount/100.00
     @total *= discount_percentage
     "After the discount, the total comes to $#{@total.to_i}."
-  else
+    else
     "There is no discount to apply."
+    end
   end
-end
 
 
-def void_last_transaction
-   total = @total-@price*@quantity
-   @total = total
-   @total
-end
+  def void_last_transaction
+    total = @total-@price*@quantity
+    @total = total
+    @total
+  end
 
 end
