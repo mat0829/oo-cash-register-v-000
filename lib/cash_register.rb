@@ -1,4 +1,3 @@
-require 'pry'
 class CashRegister
   attr_accessor :total, :discount, :item_array, :item, :items, :price, :quantity
 
@@ -32,8 +31,7 @@ class CashRegister
 
   def void_last_transaction
     total = @total-@price*@quantity
-    @total =
-    binding.pry
+    @total = total
     @total
   end
 
